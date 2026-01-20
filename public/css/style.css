@@ -342,7 +342,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-list {
-    max-width: 800px;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -391,6 +392,164 @@ h1, h2, h3, h4, h5, h6 {
 .faq-item.active .faq-answer {
     padding: 0 25px 25px 25px;
     max-height: 500px;
+}
+
+/* Обновляем FAQ секцию */
+.faq-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+/* Стили для блока с выплатами в FAQ */
+.faq-payments {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px 0;
+    border: 1px solid #e9ecef;
+}
+
+.faq-payment-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #27ae60;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-payment-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-payment-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-payment-item h4 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.faq-payment-item h4 i {
+    color: #27ae60;
+    font-size: 1.3rem;
+    width: 30px;
+    text-align: center;
+}
+
+.faq-payment-item p {
+    margin: 8px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.faq-payment-item p strong {
+    color: #2c3e50;
+    min-width: 100px;
+    font-weight: 600;
+}
+
+.faq-payment-item p:first-of-type {
+    font-size: 1.1rem;
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.faq-payment-item p:first-of-type strong {
+    color: #219653;
+}
+
+/* Стили для содержимого FAQ ответов */
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 25px 25px 25px;
+    max-height: 1000px; /* Увеличиваем для возможности показать все выплаты */
+}
+
+.faq-answer p {
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* Адаптивность для FAQ выплат */
+@media (max-width: 768px) {
+    .faq-payments {
+        padding: 20px 15px;
+    }
+    
+    .faq-payment-item {
+        padding: 15px;
+    }
+    
+    .faq-payment-item h4 {
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+    
+    .faq-payment-item h4 i {
+        font-size: 1.1rem;
+    }
+    
+    .faq-payment-item p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .faq-payment-item p strong {
+        min-width: auto;
+        margin-right: 5px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .faq-payments {
+        padding: 15px 12px;
+    }
+    
+    .faq-payment-item {
+        padding: 12px;
+    }
+    
+    .faq-payment-item h4 {
+        font-size: 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: 0 20px 15px 20px;
+    }
 }
 
 /* Секция "Контакты" - ОБНОВЛЕНО */
@@ -595,6 +754,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 3rem;
         width: 70px;
         height: 70px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+        max-height: 1500px; /* Достаточно для выплат */
     }
 }
 
