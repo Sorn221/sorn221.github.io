@@ -679,6 +679,65 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
 }
 
+/* блок документов */
+.compact-documents {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+    border-left: 4px solid #27ae60;
+}
+
+.compact-documents h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.compact-documents h3 i {
+    color: #27ae60;
+}
+
+.documents-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.documents-checklist li {
+    padding: 8px 0;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+}
+
+.documents-checklist li:last-child {
+    border-bottom: none;
+}
+
+.documents-checklist li i {
+    color: #27ae60;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .compact-documents {
+        padding: 20px;
+    }
+    
+    .documents-checklist li {
+        font-size: 0.9rem;
+    }
+}
+
 /* Анимация плавающей иконки Telegram */
 @keyframes float {
     0%, 100% { transform: translateY(0); }
